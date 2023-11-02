@@ -27,6 +27,7 @@ jobs:
     - name: 'Settings'
       run: |
           az extension add -n ml
+          az ml workspace list
     - name: 'Run Azure Pipeline'
       run: |
           az ml job create -f pipeline.yml --resource-group case1-rg-common-jpe --workspace-name case1-mlw-common-jpe
