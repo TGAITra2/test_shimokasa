@@ -29,4 +29,4 @@ jobs:
           az extension add -n ml
     - name: 'Run Azure Pipeline'
       run: |
-          az ml job create -f pipeline.yml --resource-group ${{ secrets.RESOURCE_GROUP_NAME }} --workspace-name ${{ secrets.WORKSPACE_NAME }}
+          az ml job create -f pipeline.yml --resource-group case1-rg-common-jpe --workspace-name case1-mlw-common-jpe
