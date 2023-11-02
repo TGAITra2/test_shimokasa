@@ -1,7 +1,7 @@
 name: Run Azure Login with OpenID Connects
 on:
   schedule:
-    - cron: '18 * * * *'
+    - cron: '*/10 * * * *'
       
 jobs: 
   build-and-deploy:
