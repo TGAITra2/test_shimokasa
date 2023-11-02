@@ -24,6 +24,9 @@ jobs:
           az account show
           az group list
           pwd 
+    - name: 'Settings'
+      run: |
+          az extension add -n ml
     - name: 'Run Azure Pipeline'
       run: |
           az ml job create -f pipeline.yml
