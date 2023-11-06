@@ -32,4 +32,4 @@ jobs:
           az ml workspace list
     - name: 'Run Azure Pipeline'
       run: |
-          az ml job create --file job.yml --resource-group ${{ secrets.RESOURCE_GROUP_NAME }} --workspace-name ${{ secrets.WORKSPACE_NAME }}
+          az ml job create --file pipeline.yml --resource-group ${{ secrets.RESOURCE_GROUP_NAME }} --workspace-name ${{ secrets.WORKSPACE_NAME }}
