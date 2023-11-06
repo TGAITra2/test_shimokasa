@@ -1,0 +1,24 @@
+type: command
+display_name: test_job
+experiment_name: re-training-pipeline
+
+settings:
+    force_rerun: True
+
+inputs:
+    input_data: 
+        type: uri_file
+        path: azureml://datastores/shimokasa_input_data/paths/input/sakura.csv
+    my_model: 
+        type: mlflow_model
+        path: azureml:accrued_pred_model:3
+outputs:
+    out_dir:
+        type: uri_folder
+        path: azureml://datastores/shimokasa_output_data/paths/
+environment: azureml:shimokasa_env2:2
+code: ./
+compute: azureml:batch-cluster
+command: |
+    ls
+#   python src/accrued_prediction/prediction.py --model_name "accrued_pred_model" --model_version "3" --feature_path ${{inputs.input_data}} --output_path ${{outputs.out_dir}}
