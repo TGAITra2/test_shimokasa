@@ -14,7 +14,7 @@ experiment_name: test-re-training-pipeline
 #     out_dir:
 #         type: uri_folder
 #         path: azureml://datastores/shimokasa_output_data/paths/
-# environment: azureml:shimokasa_env2:2
+environment: azureml:shimokasa_env2:2
 code: ./
 # compute: azureml:batch-cluster
 command: |
