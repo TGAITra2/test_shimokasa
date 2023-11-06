@@ -17,6 +17,6 @@ experiment_name: test-re-training-pipeline
 environment: azureml:shimokasa_env2:2
 code: ./
 # compute: azureml:batch-cluster
-command: |
+command:
     ls
 #   python src/accrued_prediction/prediction.py --model_name "accrued_pred_model" --model_version "3" --feature_path ${{inputs.input_data}} --output_path ${{outputs.out_dir}}
