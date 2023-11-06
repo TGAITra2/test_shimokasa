@@ -1,4 +1,4 @@
-type: command
+
 display_name: test_job
 experiment_name: test-re-training-pipeline
 
