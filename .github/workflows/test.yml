@@ -10,8 +10,7 @@ jobs:
       contents: read
     steps:
     - name: 'Az CLI login'
-      run: |
-# az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_SECRET_PASSWORD }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+      run: 
         uses: azure/login@v1
         with:
             # creds: ${{secrets.AZURE_CREDENTIALS}}
