@@ -17,7 +17,7 @@ experiment_name: test-re-training-pipeline
 #         path: azureml://datastores/shimokasa_output_data/paths/
 environment: azureml:shimokasa_env2:2
 compute: azureml:batch-cluster
-code: "./"
 command:
     ls
+code: ./
 #   python src/accrued_prediction/prediction.py --model_name "accrued_pred_model" --model_version "3" --feature_path ${{inputs.input_data}} --output_path ${{outputs.out_dir}}
