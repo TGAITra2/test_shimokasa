@@ -22,7 +22,7 @@ jobs:
               type: uri_folder
               path: azureml://datastores/shimokasa_output_data/paths/
         environment: azureml:shimokasa_env2:2
-        code: ./
+        # code: ./
         compute: azureml:batch-cluster
         command: |
             ls
