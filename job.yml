@@ -2,8 +2,6 @@ type: command
 display_name: test_job
 experiment_name: re-training-pipeline
 
-settings:
-    force_rerun: True
 
 inputs:
     input_data: 
