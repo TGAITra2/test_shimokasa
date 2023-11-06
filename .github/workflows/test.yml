@@ -11,13 +11,13 @@ jobs:
     steps:
     - name: 'Az CLI login'
       run: |
-        az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_SECRET_PASSWORD }} --tenant ${{ secrets.AZURE_TENANT_ID }}
-      # uses: azure/login@v1
-      # with:
-      #     # creds: ${{secrets.AZURE_CREDENTIALS}}
-      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
-      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+# az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_SECRET_PASSWORD }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+        uses: azure/login@v1
+        with:
+            # creds: ${{secrets.AZURE_CREDENTIALS}}
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     - name: Checkout repository code
       uses: actions/checkout@v4
   
@@ -32,4 +32,4 @@ jobs:
           az ml workspace list
     - name: 'Run Azure Pipeline'
       run: |
-          az ml job create -f pipeline.yml --resource-group case1-rg-common-jpe --workspace-name case1-mlw-common-jpe
+          az ml job create -f pipeline.yml -g case1-rg-common-jpe -w case1-mlw-common-jpe
