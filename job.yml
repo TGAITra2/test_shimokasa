@@ -20,5 +20,5 @@ compute: azureml:batch-cluster
 command: |
     ls
     git --version
-# code: ./src/
+code: ./src/
 #   python src/accrued_prediction/prediction.py --model_name "accrued_pred_model" --model_version "3" --feature_path ${{inputs.input_data}} --output_path ${{outputs.out_dir}}
